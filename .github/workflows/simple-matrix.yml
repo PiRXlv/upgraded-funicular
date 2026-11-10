@@ -1,0 +1,17 @@
+name: Simple matrix strategy test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  matrix-job:
+    strategy:
+      fail-fast: false
+      matrix:
+        dim1: [value1, value2]
+        dim2: [value3, value4, value5]
+    runs-on: ubuntu-slim
+
+    steps:
+      - name: do step
+        run: echo "${{matrix.dim1}} ${{matrix.dim2}}"
