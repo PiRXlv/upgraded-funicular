@@ -12,6 +12,7 @@ jobs:
         dim2: [value3, value4, value5]
     runs-on: ubuntu-slim
 
+    name: "matrix job ${{matrix.dim1}} - ${{matrix.dim2}}"
     steps:
       - name: do step
         run: echo "${{matrix.dim1}} ${{matrix.dim2}}"
